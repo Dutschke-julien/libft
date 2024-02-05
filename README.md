@@ -1,4 +1,4 @@
-[DEPRECATED]
+#[DEPRECATED]
 
 
 # 42 Libft  🍺:
