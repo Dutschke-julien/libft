@@ -1,3 +1,6 @@
+[DEPRECATED]
+
+
 # 42 Libft  🍺:
 
 This is my actual library from school 42 
@@ -10,21 +13,10 @@ My actual campus : 42Mulhouse | france
 
 - [@jdutschk | Julien Dutschke](https://github.com/Tolkgrim)
 
-## Contributing 🖥️
-- [@mfusil | Morgan Fusil](https://github.com/MiyukiMizore)
-
 ## Deployment 🟩
 To deploy this project run 
 ```bash
-Make all
-```
-for clean without delete libft.a
-```bash
-Make clean
-```
-Whith libft.a 
-```bash
-Make fclean
+Make
 ```
 
 ## Feedback 📫
