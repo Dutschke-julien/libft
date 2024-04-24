@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
+
 # define LIBFT_H
 # define BUFFER_SIZE 1
 //---------------------------------------------------------------------//
@@ -72,6 +73,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 char	*ft_strjoin_free(char const *s1, char const *s2);
 
+
 //-----------------struct_chain_list--------------------//
 
 typedef struct s_list
@@ -81,14 +83,17 @@ typedef struct s_list
 }	t_list;
 
 t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *toAdd);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *toAdd);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+
+
 //---------------------ft_printf--------------------//
 
 int		ft_verif(char c, va_list arg);
@@ -109,8 +114,6 @@ void	ft_putptr(unsigned long long ptr);
 int		ft_p_ptr(unsigned long long ptr);
 
 //-----------------Get_next_line------------------------//
-
 char	*get_next_line(int fd);
-
 //-----------------Get_next_line------------------------//
 #endif

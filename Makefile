@@ -23,13 +23,13 @@ NAME = libft.a
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra -g3
 
 MAIN = main.c libft.h libft.a
 
 RM = rm -f
 
-LINK = ar rc
+LINK = ar rcs
 
 #----------------------SOURCES FILES----------------------
 
@@ -104,124 +104,25 @@ OBJS = $(ALL_SRC:.c=.o)
 
 #----------------------RULES----------------------
 
-all : start $(NAME) script1
+all : $(NAME)
 
-bonus : all
-
-start :
-	@echo "$(GREEN) $(BOLD)\n\
-	  _____           _   _                     _             \n\
- |_   _|   ___   | | | | __   __ _   _ __  (_)  _ __ ___  \n\
-   | |    / _ \  | | | |/ /  / _  | | '__| | | | '_   _ \ \n\
-   | |   | (_) | | | |   <  | (_| | | |    | | | | | | | |\n\
-   |_|    \___/  |_| |_|\_\  \__, | |_|    |_| |_| |_| |_|\n\
-                             |___/                        "
 	
 .c.o :
-	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME) : $(OBJS)
-	@$(LINK) $(NAME) $(OBJS)
+	$(LINK) $(NAME) $(OBJS)
 
-script1 :
-	@./Script_bash/script1.sh 
 
-norminette_l :
-	@echo "$(BOLD)$(BLUE)"
-	@./Script_bash/script2.sh 
 
-alln : all norminette_l
-	@echo "$(BOLD)$(BLUE)"
-	@norminette
-	@echo "$(BOLD)$(BLUE)\n\
-			 _.--._\n\
-                 _|__|_\n\
-     _____________|__|_____________\n\
-  .-'______________________________'-.\n\
-  | |________POLICE___BOX__________| |\n\
-  |  |============================|  |\n\
-  |  | .-----------..-----------. |  |\n\
-  |  | |  _  _  _  ||  _  _  _  | |  |\n\
-  |  | | | || || | || | || || | | |  |\n\
-  |  | | |_||_||_| || |_||_||_| | |  |\n\
-  |  | | | || || | || | || || | | |  |\n\
-  |  | | |_||_||_| || |_||_||_| | |  |\n\
-  |  | |  _______  ||  _______  | |  |\n\
-  |  | | |       | || |       | | |  |\n\
-  |  | | |       | || |       | | |  |\n\
-  |  | | |       | || |       | | |  |\n\
-  |  | | |_______| || |_______| | |  |\n\
-  |  | |  _______ @||@ _______  | |  |\n\
-  |  | | |       | || |       | | |  |\n\
-  |  | | |       | || |       | | |  |\n\
-  |  | | |       | || |       | | |  |\n\
-  |  | | |_______| || |_______| | |  |\n\
-  |  | |  _______  ||  _______  | |  |\n\
-  |  | | |       | || |       | | |  |\n\
-  |  | | |       | || |       | | |  |\n\
-  |  | | |       | || |       | | |  |\n\
-  |  | | |_______| || |_______| | |  |\n\
-  |  | '-----------''-----------' |  |\n\
- _|__|/__________________________\|__|_\n\
-'----'----------------------------'----'"
 
-go :  all clean
-	@$(CC) $(CFLAGS) $(MAIN)
-	clear
-	@echo "$(YELLOW)$(BOLD)Programme éxecuter: "
-	@./a.out
-	@$(RM) a.out
 
 clean :
-	@$(RM) $(OBJS)
-	@$(RM) libft.h.gch
-	@echo "ménage en cours"
-	@echo "$(BOLD)\n$(WHITE)SUPRESSION:$(GREY)\n\n\n\n\
-      ██████████              \n\
-██████████████████████        \n\
-████              ████        \n\
-  ██              ██          \n\
-  ██  ██  ██  ██  ██          \n\
-  ██  ██  ██  ██  ██          \n\
-  ██  ██  ██  ██  ██          \n\
-  ██  ██  ██  ██  ██          \n\
-  ██  ██  ██  ██  ██          \n\
-  ██              ██          \n\
-    ██████████████            \n\
-                              \n\
-                        ██████\n\
-                        ░░██░░\n\
-                        ░░████ "
+	$(RM) $(OBJS)
 
 fclean : clean
-	@$(RM) $(NAME) a.out
-	@echo "$(BOLD)$(RED)TOTAL"
+	$(RM) $(NAME)
 
 
 re : fclean all
 
-#----------------------COLORS----------------------
-PURPLE=\x1b[35m
-GREY=\x1b[30m
-RED=\x1b[31m
-GREEN=\x1b[32m
-YELLOW=\x1b[33m
-BLUE=\x1b[34m
-CYAN=\x1b[36m
-WHITE=\x1b[37m
-
-#----------------------BACKGROUND----------------------
-IGREY=\x1b[40m
-IRED=\x1b[41m
-IGREEN=\x1b[42m
-IYELLOW=\x1b[43m
-IBLUE=\x1b[44m
-IPURPLE=\x1b[45m
-ICYAN=\x1b[46m
-IWHITE=\x1b[47m
-
-#----------------------CARACT STYLES----------------------
-BOLD=\033[1m
-UNDERLINE=\033[4m
-REVERSE=\033[7m
-#-----------------------------------------------------

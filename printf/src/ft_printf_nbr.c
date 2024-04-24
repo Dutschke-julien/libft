@@ -69,12 +69,6 @@ int	ft_putnbr1_printf(unsigned int n)
 	int	result;
 
 	result = 0;
-	if (n < 0)
-	{
-		ft_putchar('-', 1);
-		n = n * -1;
-		result++;
-	}
 	if (n > 9)
 	{
 		result += ft_putnbr_1printf(n / 10);

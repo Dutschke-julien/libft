@@ -34,7 +34,7 @@ static size_t	ft_get_nbr_word(char *s1, char c)
 		else
 			i++;
 	}
-	if (i - 1 >= 0 && s1[i - 1] != c)
+	if (i  > 0 && s1[i - 1] != c)
 	nbr_word ++;
 	return (nbr_word);
 }
